@@ -24,7 +24,7 @@ console.log(result);
 
 // b) How many function calls are there?
 /*
-    0 function calls
+    1 function calls console.log() in line 10
 */
 
 // c) Using documentation, explain what the expression movieLength % 60 represents
