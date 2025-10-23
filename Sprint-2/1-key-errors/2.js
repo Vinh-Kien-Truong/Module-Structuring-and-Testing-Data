@@ -1,12 +1,13 @@
 
 // Predict and explain first BEFORE you run any code...
-/*
-    My prediction is that this code will produce an error because the parameter name is not a valid identifier.
-*/
+
 
 // this function should square any number but instead we're going to get an error
 
 // =============> write your prediction of the error here
+/*
+    My prediction is that this code will produce an error because the parameter name is not a valid identifier.
+*/
 
 function square(3) {
     return num * num;
