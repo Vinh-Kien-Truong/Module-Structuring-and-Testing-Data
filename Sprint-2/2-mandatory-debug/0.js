@@ -1,9 +1,9 @@
 // Predict and explain first...
+
+// =============> write your prediction here
 /*
     My prediction is that this code will produce an error because the function multiply does not return any value.
 */
-// =============> write your prediction here
-
 function multiply(a, b) {
   console.log(a * b);
 }
