@@ -42,7 +42,9 @@ function assertEquals(actualOutput, targetOutput) {
     actualOutput === targetOutput,
     `Expected ${actualOutput} to equal ${targetOutput}`
   );
-  console.log(`✅ Test passed: ${actualOutput} equals ${targetOutput}`);
+  if (actualOutput === targetOutput) {
+    console.log(`✅ Test passed: ${actualOutput} equals ${targetOutput}`);
+  }
 }
 
 // Acceptance criteria:

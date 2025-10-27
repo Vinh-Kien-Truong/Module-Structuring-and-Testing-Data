@@ -11,7 +11,6 @@ function isProperFraction(numerator, denominator) {
   if (numerator < denominator) {
     return true;
   }
-  return false;
 }
 
 // The line below allows us to load the isProperFraction function into tests in other files.
@@ -24,7 +23,9 @@ function assertEquals(actualOutput, targetOutput) {
     actualOutput === targetOutput,
     `Expected ${actualOutput} to equal ${targetOutput}`
   );
-  console.log(`✅ Test passed: ${actualOutput} equals ${targetOutput}`);
+  if (actualOutput === targetOutput) {
+    console.log(`✅ Test passed: ${actualOutput} equals ${targetOutput}`);
+  }
 }
 
 // Acceptance criteria:
