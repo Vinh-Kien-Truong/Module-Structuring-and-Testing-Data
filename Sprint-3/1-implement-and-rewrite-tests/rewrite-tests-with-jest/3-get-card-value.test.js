@@ -8,6 +8,23 @@ test("should return 11 for Ace of Spades", () => {
 });
 
 // Case 2: Handle Number Cards (2-10):
+test("should return numeric value for number cards (2-9)", () => {
+  const fiveofHearts = getCardValue("5♥");
+  expect(fiveofHearts).toEqual(5);
+});
 // Case 3: Handle Face Cards (J, Q, K):
+test("should return 10 for face cards (J, Q, K, 10)", () => {
+  const kingofDiamonds = getCardValue("K♦");
+  expect(kingofDiamonds).toEqual(10);
+});
 // Case 4: Handle Ace (A):
+test("should return 11 for Ace of Clubs", () => {
+  const aceofClubs = getCardValue("A♣");
+  expect(aceofClubs).toEqual(11);
+});
 // Case 5: Handle Invalid Cards:
+test("should throw an error for invalid card rank", () => {
+  expect(() => {
+    getCardValue("X♣");
+  }).toThrow("Invalid card rank");
+});
