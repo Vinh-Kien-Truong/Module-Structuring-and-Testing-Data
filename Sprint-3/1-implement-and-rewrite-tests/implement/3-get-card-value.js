@@ -9,13 +9,20 @@
 // just make one change at a time -- don't rush -- programmers are deep and careful thinkers
 function getCardValue(card) {
   const rank = card.slice(0, card.length - 1); // Extract rank by removing the last character (suit emoji)
+
   if (rank === "A") {
     return 11;
   }
   if (["K", "Q", "J", "10"].includes(rank)) {
     return 10;
   }
-  return parseInt(rank);
+
+  const numericValue = parseInt(rank);
+  if (!isNaN(numericValue) && numericValue >= 2 && numericValue <= 9) {
+    return numericValue;
+  }
+
+  throw new Error("Invalid card rank");
 }
 
 // The line below allows us to load the getCardValue function into tests in other files.
@@ -67,3 +74,13 @@ assertEquals(aceofClubs, 11);
 // Given a card with an invalid rank (neither a number nor a recognized face card),
 // When the function is called with such a card,
 // Then it should throw an error indicating "Invalid card rank."
+
+const invalidCard = () => {
+  try {
+    getCardValue("1♠");
+    return "Should have thrown error";
+  } catch (error) {
+    return error.message;
+  }
+};
+assertEquals(invalidCard(), "Invalid card rank");
