@@ -48,5 +48,5 @@ test("should throw an error for negative count", () => {
   const count = -2;
   expect(() => {
     repeat(str, count);
-  }).toThrow("Count must be a non-negative integer");
+  }).toThrow("Count must be a 0 or positive integer");
 });
